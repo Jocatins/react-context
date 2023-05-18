@@ -1,0 +1,35 @@
+Here are steps on how to use the context API for global state management
+- https://reactjs.org/docs/context.html
+
+Step 1: Create a Context
+
+const MyContext = createContext();
+
+This function returns two components: Provider and Consumer
+
+Step 2: Create a Provider Component
+
+The Provider component is responsible for providing the data to all the components that are interested in consuming it.
+
+<MyContext.Provider value={globalState}>
+      {/* Your app components */}
+    </MyContext.Provider>
+
+    Step 3: Consume the Context
+
+    The Consumer component allows you to consume the context within the render prop pattern, 
+    while the useContext hook is a more convenient way to consume the context within functional components.
+
+     // Consume the context using useContext hook
+  const globalState = useContext(MyContext);
+
+  Alternatively, you can use the Consumer component:
+
+  <MyContext.Consumer>
+      {(globalState) => (
+        <div>
+          {/* Use the global state */}
+          <h1>{globalState.title}</h1>
+        </div>
+      )}
+    </MyContext.Consumer>
