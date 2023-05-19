@@ -1,4 +1,4 @@
-# A Brief introduction to React Context
+# A Brief introduction to React Context (useContext)
 
 In React, passing props is a fundamental concept that enables a parent component to share data with its child components as well as other components within an application.
 
