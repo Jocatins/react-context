@@ -1,20 +1,13 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext";
+import { BookContext } from "../context/BookContext";
 
 const Navbar = () => {
-	const { isLightTheme, light, dark } = useContext(ThemeContext);
-	const theme = isLightTheme ? light : dark;
+	const { books } = useContext(BookContext);
 	return (
-		<>
-			<nav style={{ background: theme.ui, color: theme.syntax }}>
-				<h1>Context App</h1>
-				<ul>
-					<li>Home</li>
-					<li>About</li>
-					<li>Contact</li>
-				</ul>
-			</nav>
-		</>
+		<div className="navbar">
+			<h1>Titan Reading List</h1>
+			<p>Currently you have {books.length} books to get through...</p>
+		</div>
 	);
 };
 
